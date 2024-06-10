@@ -13,7 +13,7 @@ function ScrollOutput(props) {
     return (
         <div className="output_container" >
             {history ? history.map((item, index) => (
-                <div key={index} style={{padding: "20px"}} onClick={() => handleClick(item)}>JSON File: {index + 1}</div>
+                <div key={index} style={{padding: "20px"}} onClick={() => handleClick(item)}>Open last JSON File №: {index + 1}</div>
             )) : "Loading"}
         </div>
     );

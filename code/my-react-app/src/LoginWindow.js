@@ -1,7 +1,8 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 function LoginWindow() {
@@ -14,7 +15,7 @@ function LoginWindow() {
     })
 
     function handleChange(e) {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
         setData((prevData) => ({
             ...prevData,
             [name]: value
@@ -37,11 +38,12 @@ function LoginWindow() {
 
     return (
         <div className="LoginWindow">
-            <input className="login" placeholder="Username" value={data.username} name="username" onChange={handleChange}/>
-            <input className="password" placeholder="Password" type="password" value={data.password} name="password"
-                   onChange={handleChange}/>
-            <button className="login_button" onClick={handleClick}>{isCreate ? 'Register' : "Login"}</button>
-            <button className="login_button" onClick={() => {
+            <div>Login</div>
+            <input className="inputs" placeholder="Username" value={data.username} name="username" onChange={handleChange} />
+            <input className="inputs" placeholder="Password" type="password" value={data.password} name="password"
+                onChange={handleChange} />
+            <button className="buttons" onClick={handleClick}>{isCreate ? 'Register' : "Login"}</button>
+            <button className="buttons" onClick={() => {
                 setIsCreate(!isCreate)
             }}>{isCreate ? 'Switch to Login' : 'Switch to Register'}</button>
         </div>
